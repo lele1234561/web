@@ -1,0 +1,79 @@
+/* 设置全局鼠标 */
+body {
+    cursor: url('../images/Mouse pointer.png'), auto !important;
+}
+
+/* 可点击元素的鼠标样式 */
+a, 
+button,
+[role="button"],
+.login-button,
+input[type="submit"],
+input[type="button"],
+.main-icon-container {
+    cursor: url('../images/Mouse pointer.png'), pointer !important;
+}
+
+* {
+    cursor: inherit;
+}
+
+a:active,
+button:active,
+[role="button"]:active,
+.login-button:active,
+input[type="submit"]:active,
+input[type="button"]:active {
+    cursor: url('../images/Mouse pointer.png') 16 16, auto !important;
+}
+
+/* 移除 */
+.cursor, .cursor-follower {
+    display: none;
+}
+
+/* 页面切换动画 */
+.page-transition {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #111;
+    z-index: 10000;
+    transform: translateY(100%);
+    pointer-events: none;
+}
+
+/* 页面进入动画 */
+@keyframes pageEnter {
+    0% {
+        transform: translateY(100%);
+    }
+    100% {
+        transform: translateY(0%);
+    }
+}
+
+/* 页面退出动画 */
+@keyframes pageExit {
+    0% {
+        transform: translateY(0%);
+    }
+    100% {
+        transform: translateY(-100%);
+    }
+}
+
+.page-transition.enter {
+    animation: pageEnter 0.6s ease-in-out forwards;
+}
+
+.page-transition.exit {
+    animation: pageExit 0.6s ease-in-out forwards;
+}
+
+/* 如果图片太大，我们可以先用简单的光标测试一下 */
+/* body {
+    cursor: crosshair;
+} */ 
