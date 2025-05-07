@@ -1,0 +1,12 @@
+project/
+├── index.html
+├── css/
+│   ├── style.css
+│   └── animations.css
+├── js/
+│   ├── main.js
+│   ├── ball.js
+│   └── navigation.js
+└── pages/
+    ├── products.html
+    └── contest.html 

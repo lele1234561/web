@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu - MyWeb</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/animations.css">
+    <link rel="stylesheet" href="../css/menu.css">
+</head>
+<body>
+    <!-- 顶部滚动栏 -->
+    <div class="announcement-bar">
+        <div class="announcement-content">
+                <!-- 第一组图片 -->
+                <img src="../images/scrollbar1.JPG" alt="scrollbar1">
+                <img src="../images/scrollbar2.JPG" alt="scrollbar2">
+                <img src="../images/scrollbar3.JPG" alt="scrollbar3">
+                <img src="../images/scrollbar4.JPG" alt="scrollbar4">
+                <!-- 第二组图片 -->
+                <img src="../images/scrollbar1.JPG" alt="scrollbar1">
+                <img src="../images/scrollbar2.JPG" alt="scrollbar2">
+                <img src="../images/scrollbar3.JPG" alt="scrollbar3">
+                <img src="../images/scrollbar4.JPG" alt="scrollbar4">
+                <!-- 第三组图片 -->
+                <img src="../images/scrollbar1.JPG" alt="scrollbar1">
+                <img src="../images/scrollbar2.JPG" alt="scrollbar2">
+                <img src="../images/scrollbar3.JPG" alt="scrollbar3">
+                <img src="../images/scrollbar4.JPG" alt="scrollbar4">
+                <!-- 第四组图片 -->
+                <img src="../images/scrollbar1.JPG" alt="scrollbar1">
+                <img src="../images/scrollbar2.JPG" alt="scrollbar2">
+                <img src="../images/scrollbar3.JPG" alt="scrollbar3">
+                <img src="../images/scrollbar4.JPG" alt="scrollbar4">
+                <!-- 第五组图片 -->
+                <img src="../images/scrollbar1.JPG" alt="scrollbar1">
+                <img src="../images/scrollbar2.JPG" alt="scrollbar2">
+                <img src="../images/scrollbar3.JPG" alt="scrollbar3">
+                <img src="../images/scrollbar4.JPG" alt="scrollbar4">
+                <!-- 第六组图片 -->
+                <img src="../images/scrollbar1.JPG" alt="scrollbar1">
+                <img src="../images/scrollbar2.JPG" alt="scrollbar2">
+                <img src="../images/scrollbar3.JPG" alt="scrollbar3">
+                <img src="../images/scrollbar4.JPG" alt="scrollbar4">
+                <!-- 第七组图片 -->
+                <img src="../images/scrollbar1.JPG" alt="scrollbar1">
+                <img src="../images/scrollbar2.JPG" alt="scrollbar2">
+                <img src="../images/scrollbar3.JPG" alt="scrollbar3">
+                <img src="../images/scrollbar4.JPG" alt="scrollbar4">
+                <!-- 第八组图片 -->
+                <img src="../images/scrollbar1.JPG" alt="scrollbar1">
+                <img src="../images/scrollbar2.JPG" alt="scrollbar2">
+                <img src="../images/scrollbar3.JPG" alt="scrollbar3">
+                <img src="../images/scrollbar4.JPG" alt="scrollbar4">
+        </div>
+    </div>
+
+    <main>
+        <!-- 所有门的总容器 -->
+        <div class="doors-wrapper">
+            <!-- door1 容器 -->
+            <div class="door-container door1-container">
+                <img src="../images/menu-door1.png" alt="menu door 1" class="menu-door">
+            </div>
+
+            <!-- door2 容器 -->
+            <div class="door-container door2-container">
+                <img src="../images/menu-door2.png" alt="menu door 2" class="menu-door">
+            </div>
+
+            <!-- door3 容器 -->
+            <div class="door-container door3-container">
+                <img src="../images/menu-door3.png" alt="menu door 3" class="menu-door">
+            </div>
+        </div>
+    </main>
+
+    <!-- 登录按钮 -->
+    <img src="../images/entrance-LOGIN-BUTTOM.png" alt="login button" class="login-button">
+
+    <script>
+        // 门的图片切换和点击跳转效果
+        const doors = [
+            {
+                element: document.querySelector('.door1-container .menu-door'),
+                front: '../images/menu-door1.png',
+                back: '../images/menu-door1-back.png',
+                link: 'brand-introduction.html'
+            },
+            {
+                element: document.querySelector('.door2-container .menu-door'),
+                front: '../images/menu-door2.png',
+                back: '../images/menu-door2-back.png',
+                link: 'product-purchase.html'
+            },
+            {
+                element: document.querySelector('.door3-container .menu-door'),
+                front: '../images/menu-door3.png',
+                back: '../images/menu-door3-back.png',
+                link: 'gacha-draw.html'
+            }
+        ];
+
+        // 为每个门添加鼠标事件
+        doors.forEach(door => {
+            let isBack = false;  // 跟踪当前显示的是否是背面
+
+            door.element.addEventListener('mouseenter', () => {
+                door.element.src = door.back;
+                isBack = true;
+            });
+
+            door.element.addEventListener('mouseleave', () => {
+                door.element.src = door.front;
+                isBack = false;
+            });
+
+            // 添加点击事件
+            door.element.addEventListener('click', () => {
+                if (isBack) {  // 只在显示背面时响应点击
+                    window.location.href = door.link;
+                }
+            });
+        });
+
+        // 登录按钮点击事件
+        document.querySelector('.login-button').addEventListener('click', () => {
+            // 添加点击动画效果
+            const button = document.querySelector('.login-button');
+            button.style.transform = 'scale(0.9) rotate(0deg)';
+            
+            // 短暂延迟后跳转，添加from参数
+            setTimeout(() => {
+                window.location.href = 'login.html?from=menu';
+            }, 200);
+        });
+    </script>
+</body>
+</html> 

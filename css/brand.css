@@ -1,0 +1,202 @@
+/* 品牌介绍页面 */
+body {
+    background: url('../images/brand itntroduction-background.png') no-repeat center center fixed;
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+/* 中心文本图片 */
+.brand-text {
+    position: absolute;
+    left: 50%;
+    top: 58%;
+    transform: translate(-50%, -50%) scale(0.8);
+    max-width: 80vw;
+    max-height: 55vh;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    z-index: 5;
+}
+
+/* 登录按钮样式 - 复用首页的样式 */
+.login-button {
+    position: fixed;
+    left: 30px;
+    bottom: 30px;
+    width: min(150px, 20vw);
+    height: min(150px, 20vw);
+    z-index: 15;
+    cursor: pointer;
+    animation: rotate 3s linear infinite;
+    transition: transform 0.3s ease;
+}
+
+.login-button:hover {
+    animation-play-state: paused;
+    transform: scale(1.65);
+}
+
+/* 在小屏幕上自动调整大小 */
+@media screen and (max-width: 768px) {
+    .login-button {
+        width: min(120px, 18vw);
+        height: min(120px, 18vw);
+        left: 20px;
+        bottom: 20px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .login-button {
+        width: min(100px, 15vw);
+        height: min(100px, 15vw);
+        left: 15px;
+        bottom: 15px;
+    }
+}
+
+/* main容器样式 */
+main {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+/* 颜色变换图案容器 */
+.pattern-container {
+    position: absolute;
+    left: 50%;
+    top: 15%;
+    transform: translateX(-50%);
+    z-index: 4;
+}
+
+/* 颜色变换图案样式 */
+.color-pattern {
+    width: auto;
+    height: auto;
+    max-width: 60vw;
+    max-height: 15vh;
+}
+
+/* 导航按钮的共同样式 */
+.product-button,
+.menu-button {
+    position: fixed;
+    top: 80px;
+    display: flex;
+    align-items: flex-start;  /* 底部对齐 */
+    gap: 10px;
+    cursor: inherit;
+    z-index: 1000;
+    font-family: Helvetica, Arial, sans-serif;
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* Product Purchase 按钮 */
+.product-button {
+    left: 30px;
+    flex-direction: row-reverse;  /* 箭头在左边 */
+}
+
+/* Menu 按钮 */
+.menu-button {
+    right: 30px;
+}
+
+/* 按钮文字样式 */
+.product-button .text,
+.menu-button .text {
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* 箭头样式 */
+.arrow {
+    font-size: 30px;
+    font-weight: bold;
+    line-height: 0.8;
+}
+
+/* 按钮悬停效果 */
+.product-button:hover,
+.menu-button:hover {
+    opacity: 0.6;
+}
+
+
+/* 响应式缩放 */
+@media screen and (max-width: 2560px) and (min-width: 1921px) {
+    .brand-text {
+        transform: translate(-50%, -50%) scale(1);
+    }
+    .brand-icon {
+        transform: translateX(-50%) scale(0.5);
+    }
+}
+
+@media screen and (max-width: 1440px) {
+    .brand-text {
+        transform: translate(-50%, -50%) scale(0.75);
+    }
+    .brand-icon {
+        transform: translateX(-50%) scale(0.35);
+    }
+}
+
+@media screen and (max-width: 1400px) {
+    .brand-text {
+        transform: translate(-50%, -50%) scale(0.72);
+    }
+    .brand-icon {
+        transform: translateX(-50%) scale(0.32);
+    }
+}
+
+@media screen and (max-width: 1280px) {
+    .brand-text {
+        transform: translate(-50%, -50%) scale(0.67);
+    }
+    .brand-icon {
+        transform: translateX(-50%) scale(0.3);
+    }
+}
+
+@media screen and (max-width: 1152px) {
+    .brand-text {
+        transform: translate(-50%, -50%) scale(0.6);
+    }
+    .brand-icon {
+        transform: translateX(-50%) scale(0.25);
+    }
+}
+
+@media screen and (max-width: 1920px) and (max-height: 1080px) {
+    .brand-text {
+        transform: translate(-50%, -50%) scale(0.95);
+    }
+    .brand-icon {
+        transform: translateX(-50%) scale(0.45);
+    }
+}
+
+@media screen and (max-width: 1366px) and (max-height: 768px) {
+    .brand-text {
+        transform: translate(-50%, -50%) scale(0.65);
+    }
+    .brand-icon {
+        transform: translateX(-50%) scale(0.3);
+    }
+} 

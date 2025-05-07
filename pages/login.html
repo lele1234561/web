@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>登录 - MyWeb</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/animations.css">
+    <link rel="stylesheet" href="../css/login.css">
+</head>
+<body>
+    <!-- 返回按钮 -->
+    <div class="back-button">
+        <span class="arrow">←</span>
+        <span class="text">Back</span>
+    </div>
+
+    <!-- 顶部滚动栏 -->
+    <div class="announcement-bar">
+        <div class="announcement-content">
+                <!-- 第一组图片 -->
+                <img src="../images/scrollbar1.JPG" alt="scrollbar1">
+                <img src="../images/scrollbar2.JPG" alt="scrollbar2">
+                <img src="../images/scrollbar3.JPG" alt="scrollbar3">
+                <img src="../images/scrollbar4.JPG" alt="scrollbar4">
+                <!-- 第二组图片 -->
+                <img src="../images/scrollbar1.JPG" alt="scrollbar1">
+                <img src="../images/scrollbar2.JPG" alt="scrollbar2">
+                <img src="../images/scrollbar3.JPG" alt="scrollbar3">
+                <img src="../images/scrollbar4.JPG" alt="scrollbar4">
+                <!-- 第三组图片 -->
+                <img src="../images/scrollbar1.JPG" alt="scrollbar1">
+                <img src="../images/scrollbar2.JPG" alt="scrollbar2">
+                <img src="../images/scrollbar3.JPG" alt="scrollbar3">
+                <img src="../images/scrollbar4.JPG" alt="scrollbar4">
+                <!-- 第四组图片 -->
+                <img src="../images/scrollbar1.JPG" alt="scrollbar1">
+                <img src="../images/scrollbar2.JPG" alt="scrollbar2">
+                <img src="../images/scrollbar3.JPG" alt="scrollbar3">
+                <img src="../images/scrollbar4.JPG" alt="scrollbar4">
+                <!-- 第五组图片 -->
+                <img src="../images/scrollbar1.JPG" alt="scrollbar1">
+                <img src="../images/scrollbar2.JPG" alt="scrollbar2">
+                <img src="../images/scrollbar3.JPG" alt="scrollbar3">
+                <img src="../images/scrollbar4.JPG" alt="scrollbar4">
+                <!-- 第六组图片 -->
+                <img src="../images/scrollbar1.JPG" alt="scrollbar1">
+                <img src="../images/scrollbar2.JPG" alt="scrollbar2">
+                <img src="../images/scrollbar3.JPG" alt="scrollbar3">
+                <img src="../images/scrollbar4.JPG" alt="scrollbar4">
+                <!-- 第七组图片 -->
+                <img src="../images/scrollbar1.JPG" alt="scrollbar1">
+                <img src="../images/scrollbar2.JPG" alt="scrollbar2">
+                <img src="../images/scrollbar3.JPG" alt="scrollbar3">
+                <img src="../images/scrollbar4.JPG" alt="scrollbar4">
+                <!-- 第八组图片 -->
+                <img src="../images/scrollbar1.JPG" alt="scrollbar1">
+                <img src="../images/scrollbar2.JPG" alt="scrollbar2">
+                <img src="../images/scrollbar3.JPG" alt="scrollbar3">
+                <img src="../images/scrollbar4.JPG" alt="scrollbar4">
+        </div>
+    </div>
+
+    <main>
+        <!-- 登录设置 -->
+        <img src="../images/login-setting.png" alt="login setting" class="login-setting">
+    </main>
+
+    <script>
+        // 返回按钮点击
+        document.querySelector('.back-button').addEventListener('click', () => {
+            // 获取上一个页面的URL
+            const previousPage = document.referrer;
+            
+            // 根据上一个页面的URL决定跳转目标
+            if (previousPage.includes('index.html') || previousPage.endsWith('/')) {
+                window.location.href = '../index.html';
+            } else if (previousPage.includes('gacha-draw.html')) {
+                window.location.href = 'gacha-draw.html';
+            } else if (previousPage.includes('menu.html')) {
+                window.location.href = 'menu.html';
+            }
+            else {
+                window.location.href = 'brand-introduction.html';
+            }
+        });
+    </script>
+</body>
+</html> 
