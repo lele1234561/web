@@ -1,0 +1,262 @@
+/* 菜单页面样式 */
+body {
+    background: url('../images/menu-background.png') no-repeat center center fixed;
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    min-width: 1200px;
+}
+
+/* main容器样式 */
+main {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+/* 所有门的总容器 */
+.doors-wrapper {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 1920px;
+    height: 100vh;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 10%;  /* 左右留出10%的空间 */
+}
+
+/* 响应式缩放 */
+@media screen and (max-width: 1920px) {
+    .doors-wrapper {
+        transform: translateX(-50%) scale(1);
+    }
+}
+
+@media screen and (max-width: 1600px) {
+    .doors-wrapper {
+        transform: translateX(-50%) scale(0.83);
+        padding: 0 8%;  /* 稍微减少边距 */
+    }
+}
+
+@media screen and (max-width: 1440px) {
+    .doors-wrapper {
+        transform: translateX(-50%) scale(0.75);
+        padding: 0 7%;
+    }
+}
+
+@media screen and (max-width: 1280px) {
+    .doors-wrapper {
+        transform: translateX(-50%) scale(0.67);
+        padding: 0 6%;
+    }
+}
+
+@media screen and (max-width: 1152px) {
+    .doors-wrapper {
+        transform: translateX(-50%) scale(0.6);
+        padding: 0 5%;
+    }
+}
+
+/* 常见的 1440p 显示器 (2560 x 1440) */
+@media screen and (max-width: 1440px) {
+    body {
+        background-size: cover;
+    }
+}
+
+/* MacBook Pro 14" (3024 x 1964) */
+@media screen and (max-width: 1400px) {
+    .doors-wrapper {
+        transform: translateX(-50%) scale(0.72);
+    }
+}
+
+/* MacBook Pro 13" (2560 x 1600) */
+@media screen and (max-width: 1280px) {
+    .doors-wrapper {
+        transform: translateX(-50%) scale(0.67);
+    }
+}
+
+/* MacBook Air (2304 x 1440) */
+@media screen and (max-width: 1152px) {
+    .doors-wrapper {
+        transform: translateX(-50%) scale(0.6);
+    }
+}
+
+/* 常见笔记本电脑分辨率 (1920 x 1080) */
+@media screen and (max-width: 1920px) and (max-height: 1080px) {
+    .doors-wrapper {
+        transform: translateX(-50%) scale(0.95);
+    }
+}
+
+/* 常见笔记本电脑分辨率 (1366 x 768) */
+@media screen and (max-width: 1366px) and (max-height: 768px) {
+    .doors-wrapper {
+        transform: translateX(-50%) scale(0.65);
+    }
+}
+
+/* 高度适配 */
+@media screen and (max-height: 900px) {
+    .door-container {
+        top: 35%;
+    }
+}
+
+@media screen and (max-height: 800px) {
+    .door-container {
+        top: 38%;
+    }
+    .menu-door {
+        max-height: 65vh;
+    }
+}
+
+@media screen and (max-height: 700px) {
+    .door-container {
+        top: 40%;
+    }
+    .menu-door {
+        max-height: 60vh;
+    }
+}
+
+/* 背景图片适配 */
+@media screen and (min-aspect-ratio: 16/9) {
+    body {
+        background-size: cover;
+    }
+}
+
+@media screen and (max-aspect-ratio: 16/9) {
+    body {
+        background-size: 100% 100%;
+    }
+}
+
+/* 门的容器基础样式 */
+.door-container {
+    position: absolute;
+    top: 50%;
+    z-index: 5;
+    width: 420px;
+    height: auto;
+    display: flex;
+    justify-content: flex-end;  /* 改为右对齐 */
+}
+
+/* door1 容器位置 */
+.door1-container {
+    left: 6%;  /* 距离左边10% */
+    transform: translateY(-45%);
+}
+
+/* door2 容器位置 */
+.door2-container {
+    left: 50%;  /* 居中 */
+    transform: translate(-70%, -45%);  /* X轴居中偏移 */
+}
+
+/* door3 容器位置 */
+.door3-container {
+    right: 16%;  /* 距离右边10% */
+    transform: translateY(-45%);
+}
+
+/* 门的图片样式 */
+.menu-door {
+    max-width: 100%;
+    max-height: 80vh;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    transform: scale(0.9);
+    transform-origin: right center;  /* 改为右侧中心点 */
+    position: relative;  /* 添加相对定位 */
+    right: 0;  /* 确保右对齐 */
+}
+
+/* 确保滚动栏样式与其他页面一致 */
+.announcement-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    min-width: 1200px;  /* 与body最小宽度一致 */
+    height: min(55px, 8vh);
+    overflow: hidden;
+    z-index: 1001;
+    background: #ffffff;
+}
+
+.announcement-content {
+    display: flex;
+    height: 100%;
+    animation: scrollImages 40s linear infinite;
+    min-width: 200%;
+}
+
+.announcement-content img {
+    height: 100%;
+    width: auto;
+    object-fit: contain;
+    max-height: min(55px, 8vh);
+    flex-shrink: 0;
+}
+
+/* 移除之前的悬停放大效果，保持缩放比例 */
+.menu-door:hover {
+    transform: scale(0.9);
+    transform-origin: right center;  /* 保持右侧中心点 */
+}
+
+/* 登录按钮样式 */
+.login-button {
+    position: fixed;
+    left: 30px;
+    bottom: 30px;
+    width: min(150px, 20vw);
+    height: min(150px, 20vw);
+    z-index: 15;
+    cursor: pointer;
+    animation: rotate 3s linear infinite;
+    transition: transform 0.3s ease;
+}
+
+.login-button:hover {
+    animation-play-state: paused;
+    transform: scale(1.65);
+}
+
+/* 在小屏幕上自动调整大小 */
+@media screen and (max-width: 768px) {
+    .login-button {
+        width: min(120px, 18vw);
+        height: min(120px, 18vw);
+        left: 20px;
+        bottom: 20px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .login-button {
+        width: min(100px, 15vw);
+        height: min(100px, 15vw);
+        left: 15px;
+        bottom: 15px;
+    }
+} 

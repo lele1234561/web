@@ -1,0 +1,591 @@
+/* 产品页面样式 */
+body {
+    background: #FFFFFF;  /* 白色背景 */
+    width: 100%;
+    min-height: 100vh;
+    overflow-x: hidden;  /* 禁止水平滚动 */
+    margin: 0;
+    padding: 0;
+}
+
+/* main容器样式 */
+main {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+/* 头部图片容器 */
+.header-container {
+    width: 100%;
+    position: fixed;  /* 固定位置 */
+    top: min(20px, 8vh);  /* 紧贴滚动栏 */
+    left: 0;
+    z-index: 100;
+}
+
+/* 头部图片样式 */
+.header-image {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* 主要内容区域 */
+.content-container {
+    width: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    height: calc(100vh - 205px);
+    margin-top: calc(min(55px, 8vh) + 77px);
+    padding-bottom: 200px;
+    display: flex;
+    justify-content: center;
+}
+
+/* 底部图片容器 */
+.footer-container {
+    width: 100%;
+    position: fixed;  /* 固定在底部 */
+    bottom: 0;
+    left: 0;
+    z-index: 100;
+}
+
+/* 底部图片样式 */
+.footer-image {
+    width: 100%;
+    height: 50%;  /* 修改为原来高度的50% */
+    display: block;
+    object-fit: fill;  /* 使图片填充容器并允许形变 */
+}
+
+/* 确保滚动栏样式与其他页面一致 */
+.announcement-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    min-width: auto;
+    height: min(55px, 8vh);
+    overflow: hidden;
+    z-index: 1001;
+    background: #ffffff;
+}
+
+.announcement-content {
+    display: flex;
+    height: 100%;
+    animation: scrollImages 40s linear infinite;
+    min-width: 200%;
+}
+
+.announcement-content img {
+    height: 100%;
+    width: auto;
+    object-fit: contain;
+    max-height: min(55px, 8vh);
+    flex-shrink: 0;
+}
+
+/* 产品展示外部容器 */
+.products-container {
+    position: relative;
+    width: 1920px;
+    margin: 0 auto;
+    transform-origin: top center;
+}
+
+/* 各部分基础样式 */
+.products-row,
+.products-second-row,
+.products-third-row,
+.products-fourth-row,
+.products-fifth-row {
+    position: relative;
+    width: 1920px;
+    height: 650px;  /* 固定每个部分的高度 */
+    overflow: visible;
+}
+
+/* 第二部分位置调整 */
+.products-second-row {
+    margin-top: 0px;  /* 与第一部分的间距 */
+}
+
+/* 第三部分位置调整 */
+.products-third-row {
+    margin-top: 80px;  /* 与第二部分的间距 */
+}
+
+/* 第四部分位置调整 */
+.products-fourth-row {
+    margin-top: 100px;  /* 与第三部分的间距 */
+  
+}
+
+.products-fifth-row {
+    margin-top: 100px;  /* 与第三部分的间距 */
+  
+}
+/* 第五部分样式 */
+.products-sixth-row {
+    position: relative;
+    width: 1920px;
+    height: 200px;  /* 与其他部分保持一致 */
+    margin-top: 0px;  /* 与第四部分的间距 */
+    overflow: visible;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+/* 响应式缩放 */
+@media screen and (max-width: 2560px) and (min-width: 1921px) {
+    .products-container {
+        transform: scale(1.2);
+    }
+}
+
+@media screen and (max-width: 1920px) {
+    .products-container {
+        transform: scale(1);
+    }
+}
+
+@media screen and (max-width: 1440px) {
+    .products-container {
+        transform: scale(0.75);
+    }
+}
+
+@media screen and (max-width: 1400px) {
+    .products-container {
+        transform: scale(0.72);
+    }
+}
+
+@media screen and (max-width: 1280px) {
+    .products-container {
+        transform: scale(0.67);
+    }
+}
+
+@media screen and (max-width: 1152px) {
+    .products-container {
+        transform: scale(0.6);
+    }
+}
+
+@media screen and (max-width: 1920px) and (max-height: 1080px) {
+    .products-container {
+        transform: scale(0.95);
+    }
+}
+
+@media screen and (max-width: 1366px) and (max-height: 768px) {
+    .products-container {
+        transform: scale(0.65);
+    }
+}
+
+/* 宝箱图片容器样式 */
+.treasure-box {
+    position: absolute;
+    left: 50%;  
+    top: -2%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 500px;  /* 固定容器宽度 */
+    height: 550px; /* 固定容器高度 */
+}
+
+/* 宝箱图片样式 */
+.treasure-img {
+    position: absolute; /* 绝对定位 */
+    top: 55%;         /* 垂直居中 */
+    left: 50%;        /* 水平居中 */
+    transform: translate(-50%, -50%); /* 确保完全居中 */
+    width: auto;
+    height: 420px;
+    object-fit: contain;
+}
+
+.color-icon {
+    position: absolute;
+    left:20%;          
+    top: 40%;
+    width: 200px;
+}
+
+.color-icon img {
+    width: auto;
+    height: 200px;
+    object-fit: contain;
+}
+/* 当显示 Box2 时的样式 */
+.treasure-img[src*="Box2"] {
+    width: auto;
+    height: 550px;
+    object-fit: contain;
+}
+
+.color-icon {
+    position: absolute;
+    left:20%;          
+    top: 35%;
+    width: 200px;
+}
+
+.color-icon img {
+    width: auto;
+    height: 200px;
+    object-fit: contain;
+}
+
+/* 通行证图片容器样式 */
+.playful-pass {
+    position: absolute;
+    right: 15%;
+    top:45%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: auto;  
+}
+
+.playful-pass img {
+    width: 380px;
+    height: auto;
+    object-fit: contain;
+}
+
+/* 标题样式 */
+.product-title {
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 24px;
+    font-weight: bold;
+    color: #000;
+    text-align: center;
+    margin-top: 10px;  /* 减小与图片的间距 */
+    position: absolute;  
+    top: 100%;  /* 放在图片下方 */
+    width: 100%; 
+}
+
+/* 左侧颜色变换图标样式 */
+.color-icon1 {
+    position: absolute;
+    left:22%;          
+    top: 40%;
+    width: 200px;
+    animation: rotateIcon 4s linear infinite;
+    transform-origin: center center;
+}
+
+.color-icon1 img {
+    width: auto;
+    height: 200px;
+    object-fit: contain;
+}
+
+@keyframes rotateIcon {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* 右侧宇宙图容器样式 */
+.universe-image {
+    position: absolute;
+    right: 18%;
+    top: 10%;
+    width: 600px;   /* 固定容器宽度 */
+    height: 440px;  /* 固定容器高度 */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* 宇宙图片样式 */
+.universe-img {
+    position: absolute; /* 绝对定位 */
+    top: 55%;         /* 垂直居中 */
+    left: 50%;        /* 水平居中 */
+    transform: translate(-50%, -50%); /* 确保完全居中 */
+    width: 600px;
+    height: auto;
+    object-fit: contain;
+}
+
+/* 当显示宇宙图2时的样式 */
+.universe-img[src*="Universe2"] {
+    width: 600px;  /* 0.8倍的原始宽度 */
+    height: auto;
+    top: 55%;         /* 垂直居中 */
+    left: 50%;        /* 水平居中 */
+}
+
+/* 宝箱部分的按钮位置 */
+.treasure-box .switch-button {
+    position: absolute;
+    top: 60%;  /* 在图片70%的位置 */
+    transform: translateY(-50%);
+   
+    z-index: 20;
+}
+
+.treasure-box .left-switch {
+    left: -210px;
+}
+
+.treasure-box .right-switch {
+    right: -360px;
+}
+
+/* 宇宙图部分的按钮位置 */
+.universe-image .switch-button {
+    position: absolute;
+    top: 70%;
+    transform: translateY(-50%);
+   
+    z-index: 20;
+}
+
+.universe-image .left-switch-universe {
+    left: -100px; 
+}
+
+.universe-image .right-switch-universe {
+    right: -280px;  
+}
+
+/* 切换按钮图片 */
+.switch-button img {
+    width: 500px;
+    height: auto;
+}
+
+/* 左侧 Inner Joy Set 样式 */
+.inner-joy {
+    position: absolute;
+    left: 20%;
+    top: 20%;
+    width:420px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.inner-joy img {
+    width: auto;
+    height: 310px;
+    object-fit: contain;
+}
+
+/* 右侧 Pocket Buddies 容器样式 */
+.pocket-buddies {
+    position: absolute;
+    right: 15%;
+    top: 30%;
+    width: 450px;
+    height: 230px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Pocket Buddies 图片样式 */
+.buddies-img {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: auto;
+    height: 300px;
+    object-fit: contain;
+}
+
+
+/* 左侧 Inner pic 样式 */
+.inner-pic {
+    position: absolute;
+    left: 20%;
+    top: 20%;
+    width:420px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.inner-pic img {
+    width: auto;
+    height: 310px;
+    object-fit: contain;
+}
+
+.inner-pic2 {
+    position: absolute;
+    left: 48%;
+    top: 40%;
+    width:220px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.inner-pic2 img {
+    width: auto;
+    height: 150px;
+    object-fit: contain;
+}
+/* 右侧 Pocket Buddies pic容器样式 */
+.pocket-pic {
+    position: absolute;
+    right: 15%;
+    top: 30%;
+    width: 450px;
+    height: 330px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Pocket Buddies 图片样式 */
+.pic-img {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: auto;
+    height: 450px;
+    object-fit: contain;
+}
+
+/* 右侧旋转图标样式 */
+.rotating-icon {
+    position: absolute;
+    right: 35%; 
+    top: 40%;
+    width: 850px;
+    height: 330px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.rotating-icon img {
+    width: auto;
+    height: 200px;
+    object-fit: contain;
+}
+
+/* 左侧 Inner Child 样式 */
+.inner-child {
+    position: absolute;
+    left: 45%;
+    top: 0%;
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.inner-child img {
+    width: auto;
+    height: 700px;
+    object-fit: contain;
+}
+
+/* 旋转动画 */
+.rotate-animation {
+    animation: rotate 2s linear infinite;
+    transform-origin: center center;  /* 确保从中心旋转 */
+}
+
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* 响应式布局调整 */
+@media screen and (max-width: 1600px) {
+    .inner-child {
+        left: 20%;
+    }
+    
+    .rotating-icon {
+        right: 10%;
+    }
+}
+
+@media screen and (max-width: 1400px) {
+    .inner-child {
+        left: -10%;
+    }
+    
+    .rotating-icon {
+        right: -10%;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .products-fourth-row {
+        transform: scale(0.8);
+        transform-origin: top center;
+    }
+}
+
+/* 导航按钮基础样式 */
+.gacha-button,
+.brand-button {
+    position: fixed;
+    top: 80px;
+    display: flex;
+    align-items: flex-end;  /* 底部对齐 */
+    gap: 10px;
+    cursor: pointer;  /* 改为 pointer */
+    z-index: 1000;
+    font-family: Helvetica, Arial, sans-serif;
+    color: #000000;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 10px;  /* 添加内边距使点击区域更大 */
+}
+
+/* 左侧 Gacha Draw 按钮 */
+.gacha-button {
+    left: 30px;
+    flex-direction: row-reverse;  /* 箭头在左边 */
+}
+
+/* 右侧 Brand Introduction 按钮 */
+.brand-button {
+    right: 30px;
+}
+
+/* 箭头样式 */
+.arrow {
+    font-size: 30px;
+    font-weight: bold;
+    line-height: 0.8;  /* 调整箭头的基线位置 */
+}
+
+/* 按钮悬停效果 */
+.gacha-button:hover,
+.brand-button:hover {
+    opacity: 0.6;
+} 

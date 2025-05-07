@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>品牌介绍 - MyWeb</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/animations.css">
+    <link rel="stylesheet" href="../css/brand.css">
+</head>
+<body>
+    <!-- 顶部滚动栏 -->
+    <div class="announcement-bar">
+        <div class="announcement-content">
+                <!-- 第一组图片 -->
+                <img src="../images/scrollbar1.JPG" alt="scrollbar1">
+                <img src="../images/scrollbar2.JPG" alt="scrollbar2">
+                <img src="../images/scrollbar3.JPG" alt="scrollbar3">
+                <img src="../images/scrollbar4.JPG" alt="scrollbar4">
+                <!-- 第二组图片 -->
+                <img src="../images/scrollbar1.JPG" alt="scrollbar1">
+                <img src="../images/scrollbar2.JPG" alt="scrollbar2">
+                <img src="../images/scrollbar3.JPG" alt="scrollbar3">
+                <img src="../images/scrollbar4.JPG" alt="scrollbar4">
+                <!-- 第三组图片 -->
+                <img src="../images/scrollbar1.JPG" alt="scrollbar1">
+                <img src="../images/scrollbar2.JPG" alt="scrollbar2">
+                <img src="../images/scrollbar3.JPG" alt="scrollbar3">
+                <img src="../images/scrollbar4.JPG" alt="scrollbar4">
+                <!-- 第四组图片 -->
+                <img src="../images/scrollbar1.JPG" alt="scrollbar1">
+                <img src="../images/scrollbar2.JPG" alt="scrollbar2">
+                <img src="../images/scrollbar3.JPG" alt="scrollbar3">
+                <img src="../images/scrollbar4.JPG" alt="scrollbar4">
+                <!-- 第五组图片 -->
+                <img src="../images/scrollbar1.JPG" alt="scrollbar1">
+                <img src="../images/scrollbar2.JPG" alt="scrollbar2">
+                <img src="../images/scrollbar3.JPG" alt="scrollbar3">
+                <img src="../images/scrollbar4.JPG" alt="scrollbar4">
+                <!-- 第六组图片 -->
+                <img src="../images/scrollbar1.JPG" alt="scrollbar1">
+                <img src="../images/scrollbar2.JPG" alt="scrollbar2">
+                <img src="../images/scrollbar3.JPG" alt="scrollbar3">
+                <img src="../images/scrollbar4.JPG" alt="scrollbar4">
+                <!-- 第七组图片 -->
+                <img src="../images/scrollbar1.JPG" alt="scrollbar1">
+                <img src="../images/scrollbar2.JPG" alt="scrollbar2">
+                <img src="../images/scrollbar3.JPG" alt="scrollbar3">
+                <img src="../images/scrollbar4.JPG" alt="scrollbar4">
+                <!-- 第八组图片 -->
+                <img src="../images/scrollbar1.JPG" alt="scrollbar1">
+                <img src="../images/scrollbar2.JPG" alt="scrollbar2">
+                <img src="../images/scrollbar3.JPG" alt="scrollbar3">
+                <img src="../images/scrollbar4.JPG" alt="scrollbar4">
+        </div>
+    </div>
+
+    <!-- 左上角 Product Purchase 按钮 -->
+    <div class="product-button">
+        <span class="text">Product Purchase</span>
+        <span class="arrow">→</span>
+    </div>
+
+    <!-- 右上角 Menu 按钮 -->
+    <div class="menu-button">
+        <span class="arrow">←</span>
+        <span class="text">Menu</span>
+    </div>
+
+    <main>
+        
+        <!-- 中心文本图片 -->
+        <img src="../images/brand itntroduction-text.png" alt="brand introduction text" class="brand-text">
+        
+        <!-- 添加颜色变换图案 -->
+        <div class="pattern-container">
+            <img src="../images/brand itntroduction-Color-changing pattern1.png" alt="color changing pattern" class="color-pattern">
+        </div>
+    </main>
+
+    <!-- 登录按钮 -->
+    <img src="../images/entrance-LOGIN-BUTTOM.png" alt="login button" class="login-button">
+
+    <script src="../js/main.js"></script>
+    <script>
+        // 添加登录按钮点击事件
+        document.querySelector('.login-button').addEventListener('click', () => {
+            // 添加点击动画效果
+            const button = document.querySelector('.login-button');
+            button.style.transform = 'scale(0.9) rotate(0deg)';
+            
+            // 短暂延迟后跳转，添加from参数
+            setTimeout(() => {
+                window.location.href = 'login.html?from=brand';
+            }, 200);
+        });
+
+        // 图案切换逻辑
+        const patterns = [
+            '../images/brand itntroduction-Color-changing pattern1.png',
+            '../images/brand itntroduction-Color-changing pattern2.png',
+            '../images/brand itntroduction-Color-changing pattern3.png',
+            '../images/brand itntroduction-Color-changing pattern4.png',
+            '../images/brand itntroduction-Color-changing pattern5.png',
+            '../images/brand itntroduction-Color-changing pattern6.png',
+            '../images/brand itntroduction-Color-changing pattern7.png',
+            '../images/brand itntroduction-Color-changing pattern8.png',
+            '../images/brand itntroduction-Color-changing pattern9.png',
+            '../images/brand itntroduction-Color-changing pattern10.png',
+            '../images/brand itntroduction-Color-changing pattern11.png',
+            '../images/brand itntroduction-Color-changing pattern12.png'
+        ];
+        
+        const patternImg = document.querySelector('.color-pattern');
+        let currentPattern = 0;
+        
+        function changePattern() {
+            currentPattern = (currentPattern + 1) % patterns.length;
+            patternImg.src = patterns[currentPattern];
+        }
+        
+        
+        setInterval(changePattern, 600);
+
+        // 添加新按钮的点击事件
+        document.querySelector('.product-button').addEventListener('click', () => {
+            window.location.href = 'product-purchase.html';
+        });
+
+        document.querySelector('.menu-button').addEventListener('click', () => {
+            window.location.href = 'menu.html';
+        });
+    </script>
+</body>
+</html> 
