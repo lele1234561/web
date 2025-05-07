@@ -243,12 +243,10 @@ main {
     height: min(150px, 20vw);
     z-index: 15;
     cursor: pointer;
-    animation: rotate 3s linear infinite;
     transition: transform 0.3s ease;
 }
 
 .login-button:hover {
-    animation-play-state: paused;
     transform: scale(1.65);
 }
 

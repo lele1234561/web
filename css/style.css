@@ -167,24 +167,11 @@ main {
     width: calc(200px * var(--scale-ratio));
     height: auto;
     z-index: 15;
-    animation: rotate 3s linear infinite;
     transition: transform 0.3s ease;
 }
 
 .login-button:hover {
-    animation-play-state: paused;
-    transform: scale(1.65);  /* 1.5 * 1.1 以保持相对放大效果 */
-
-}
-
-/* 旋转动画以适应新的大小 */
-@keyframes rotate {
-    from {
-        transform: rotate(0deg) scale(1.5);  /* 增加1.5倍大小 */
-    }
-    to {
-        transform: rotate(360deg) scale(1.5);  /* 保持旋转时的大小一致 */
-    }
+    transform: scale(1.65);
 }
 
 /* 在小屏幕上自动调整大小 */
@@ -194,15 +181,6 @@ main {
         height: min(120px, 18vw);
         left: 20px;
         bottom: 20px;
-    }
-
-    @keyframes rotate {
-        from {
-            transform: rotate(0deg) scale(1.3);
-        }
-        to {
-            transform: rotate(360deg) scale(1.3);
-        }
     }
 
     .login-button:hover {
@@ -216,15 +194,6 @@ main {
         height: min(100px, 15vw);
         left: 15px;
         bottom: 15px;
-    }
-
-    @keyframes rotate {
-        from {
-            transform: rotate(0deg) scale(1.2);
-        }
-        to {
-            transform: rotate(360deg) scale(1.2);
-        }
     }
 
     .login-button:hover {
