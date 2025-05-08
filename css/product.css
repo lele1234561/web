@@ -43,6 +43,27 @@ main {
     padding-bottom: 200px;
     display: flex;
     justify-content: center;
+    scrollbar-width: thin;  /* Firefox */
+    scrollbar-color: #f664c1 #f1f1f1;  /* Firefox */
+}
+
+/* 自定义滚动条样式 (Webkit browsers) */
+.content-container::-webkit-scrollbar {
+    width: 12px;
+}
+
+.content-container::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+}
+
+.content-container::-webkit-scrollbar-thumb {
+    background: #91fefc;
+    border-radius: 4px;
+}
+
+.content-container::-webkit-scrollbar-thumb:hover {
+    background: #b9f5ff;
 }
 
 /* 底部图片容器 */

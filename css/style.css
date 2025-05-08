@@ -123,7 +123,7 @@ main {
     left: 50%;
     top: 48%;
     transform: translate(-50%, -50%);
-    width: 83%;  /* 相对于main-wrapper的宽度 */
+    width: 68%;  /* 相对于main-wrapper的宽度 */
     aspect-ratio: 891/600;  /* 保持原始比例 */
     z-index: 5;
    

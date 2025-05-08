@@ -115,8 +115,8 @@ main {
 
 /* 娃娃盒子图标 */
 .doll-box-icon {
-    width: auto;
-    height: min(90vh, 800px);  /* 最大高度限制 */
+    width: 1080px;
+    height: min(90vh, 800px);
     object-fit: contain;
     display: block;
 }
@@ -297,12 +297,12 @@ main {
 .egg-collision-container {
     position: absolute;
     width: 35%;          /* 相对于娃娃盒子的宽度 */
-    height: 48%;         /* 相对于娃娃盒子的高度 */
+    height: 40%;         /* 相对于娃娃盒子的高度 */
     left: 50%;
     top: 16%;
     transform: translateX(-50%);
     z-index: 6;
-   /* border: 1px solid blue; */
+    /*border: 1px solid blue; */
 }
 
 /* 弹跳彩蛋样式 */
