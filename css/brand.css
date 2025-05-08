@@ -9,6 +9,18 @@ body {
     flex-direction: column;
 }
 
+/* 修改滚动公告栏样式 */
+.announcement-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: min(56px, 8vh);  /* 响应式高度 */
+    overflow: hidden;
+    z-index: 1001;
+    background: #b0f3ff;
+}
+
 /* 中心文本图片 */
 .brand-text {
     position: absolute;

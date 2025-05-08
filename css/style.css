@@ -79,7 +79,7 @@ main {
     height: min(56px, 8vh);  /* 响应式高度 */
     overflow: hidden;
     z-index: 1001;
-    background: #ffffff;
+    background: #b0f3ff;
 }
 
 .announcement-content {
